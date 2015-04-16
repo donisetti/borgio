@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Cadastro de Tipo Plano de Saúde";
+}
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Cadastro de Tipo de Plano de Saúde")
+
+        .Content(@<text>
+            @Html.Partial("_GridTipoPlano")
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>
+
+
+
+
+

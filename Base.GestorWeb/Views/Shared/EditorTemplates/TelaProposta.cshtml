@@ -1,0 +1,162 @@
+﻿@model Base.GestorWeb.ViewModels.PropostaViewModel
+
+@Html.HiddenFor(model => model.PropostaId)
+
+<div id="campos" style="width:700px;height:150px;padding:5px; ">
+    
+    <div class="row">
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.NumeroProposta)
+        </div>
+
+        <div class="col-md-3">
+            @Html.EditorFor(model => model.NumeroProposta)
+            @Html.ValidationMessageFor(model => model.NumeroProposta)
+
+        </div>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Vendedor)
+        </div>
+
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Vendedor)
+            @Html.ValidationMessageFor(model => model.Vendedor)
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Proponente)
+        </div>
+
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.Proponente.Nome)
+            @Html.ValidationMessageFor(model => model.Proponente.Nome)
+
+        </div>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.NomeMae)
+        </div>
+
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.NomeMae)
+            @Html.ValidationMessageFor(model => model.NomeMae)
+
+        </div>
+    </div>
+
+    @*<div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.TelResidencial)
+
+            </div>
+
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.TelResidencial)
+                @Html.ValidationMessageFor(model => model.TelResidencial)
+
+            </div>
+
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.TelCelular)
+
+            </div>
+
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.TelCelular)
+                @Html.ValidationMessageFor(model => model.TelCelular)
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Email)
+
+            </div>
+
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                @Html.LabelFor(model => model.Tipo)
+
+            </div>
+
+
+
+            <div class="col-md-8">
+                @(Html.Kendo().ComboBox()
+                    .Name("Tipo")
+                    .Placeholder("Tipo...")
+                    .BindTo(new List<string>() {
+                        "Prospecto",
+                        "Cliente",
+                        "Titular",
+                        "Fornecedor",
+                        "Dependente"
+
+                    })
+                    .SelectedIndex(1)
+                    .Suggest(true)
+                    .HtmlAttributes(new { style = "width:200px" }))
+                @Html.ValidationMessageFor(model => model.Tipo)
+            </div>
+
+
+        </div>*@
+
+
+</div>
+
+
+
+<style scoped>
+    .k-edit-form {
+        width: 750px;
+    }
+
+    .k-edit-form-container {
+        width: 750px;
+        /*height: 300px;*/
+    }
+
+    div.row {
+        width: 650px;
+        margin-top: 5px;
+    }
+
+    .label {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    .single-line {
+        max-width: none;
+        width: 100%;
+    }
+
+    .k-editor-textarea {
+        max-width: none;
+        width: 100%;
+    }
+</style>
+
+

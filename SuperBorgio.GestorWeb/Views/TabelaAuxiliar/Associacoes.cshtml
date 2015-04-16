@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Cadastro de Tipo Associações";
+}
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Cadastro de Tipo de Associações")
+
+        .Content(@<text>
+            @Html.Partial("_GridTipoAssociacoes")
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>
+
+
+
+
+

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Listagem de Operadores";
+}
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Listagem de Operadoras")
+
+        .Content(@<text>
+            @Html.Partial("_ListaOperadoras")
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>

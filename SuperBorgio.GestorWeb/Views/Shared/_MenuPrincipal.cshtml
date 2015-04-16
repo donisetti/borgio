@@ -1,0 +1,77 @@
+﻿@using Microsoft.Win32
+@(Html.Kendo().Menu()
+            .Name("menu_principal")
+            .Items(menu =>
+            {
+
+
+                menu.Add().Text("Cadastro").Items(cad =>
+                {
+                    //cad.Add().Text("Dados Pessoais").Items(pessoa =>
+                    //{
+                    //    pessoa.Add().Text("Pessoas").Action("Index", "Pessoa");
+                    //    pessoa.Add().Text("Empresas").Action("Index", "Empresa");
+                    //});
+
+                    //cad.Add().Text("Dados Básicos").Items(basico =>
+                    //{
+                       
+                    //    basico.Add().Text("Produtos").Action("Index", "Produto");
+                      
+                    //});
+
+                    //cad.Add().Text("Dados Auxiliares").Items(auxiliar =>
+                    //{
+                    //    auxiliar.Add().Text("Categoria").Action("Categoria", "TabelaAuxiliar");
+                     
+                    //});
+
+
+
+                });
+
+                menu.Add().Text("Produtos").Action("Consulta", "Produto")
+                    
+                    .Items(op =>
+                    {
+                        op.Add().Text("Preço de Custo").Action("Consulta", "Produto");
+                            //.Items(cli =>
+                            //    {
+                            //        cli.Add().Text("Registro Preços").Action("Consulta", "Produto");
+
+
+                            //    });
+                    });
+
+                //menu.Add().Text("Financeiro").Items(fin =>
+                //{
+                //    fin.Add().Text("Registro de Mensalidades").Action("Mensalidade", "Financeiro");
+                //    fin.Add().Text("Baixa de Recebimentos").Action("Baixa", "Financeiro");
+                //    fin.Add().Text("Pagamento de Comissões").Action("Comissoes", "Financeiro");
+
+                //});
+
+
+
+
+                menu.Add().Text("Relatórios").Items(rela =>
+                {
+                    //rela.Add().Text("Listagem Geral").Items(lista =>
+                    //{
+                    //    lista.Add().Text("Listagem de Dados Auxiliares").Action("ListaTabAuxiliar", "ListagemGeral");
+                    //    lista.Add().Text("Listagem de Produtos").Action("Clientes", "ListagemGeral");
+                    //    lista.Add().Text("Listagem de Fornecedores").Action("Operadoras", "ListagemGeral");
+ 
+
+                    //});
+
+                    //rela.Add().Text("Gerenciais").Items(ger =>
+                    //{
+                    //    ger.Add().Text("Listagem de Compras").Action("Clientes", "ListagemGerencial");
+                    //    ger.Add().Text("Listagem de Preços").Action("Operadoras", "ListagemGerencial");
+
+                    //});
+                });
+
+               
+            }))

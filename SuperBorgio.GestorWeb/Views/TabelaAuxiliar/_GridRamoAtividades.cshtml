@@ -1,0 +1,52 @@
+﻿@using SuperBorgio.GestorWeb.ViewModels
+
+
+
+@(Html.Kendo().Grid<TabelaAuxiliarViewModel>()
+    .Name("GridRamoAtividade")
+    .ToolBar(tb => tb.Create())
+    .Pageable(pg => pg
+        .Refresh(true)
+        .PageSizes(true)
+        .ButtonCount(20)
+        )
+    .Sortable()
+    .Filterable()
+
+    .Editable(ed =>
+            {
+                ed.Mode(GridEditMode.PopUp).TemplateName("TelaTabAuxiliar");
+                ed.DisplayDeleteConfirmation("Confirma a exlusão deste item?");
+                ed.Window(w => w.Title("Cadastro de Ramo de Atividades"));
+
+            }
+          )
+    .Scrollable(scr => scr.Height(360))
+    .DataSource(dataSource => dataSource.Ajax()
+    .Model(model => model.Id(c => c.Id))
+                .Read("LerRamoAtividade", "TabelaAuxiliar")
+            .Create("Incluir", "TabelaAuxiliar")
+            .Update("Atualizar", "TabelaAuxiliar")
+            .Destroy("Excluir", "TabelaAuxiliar"))
+
+    .Columns(cols =>
+    {
+        cols.Command(cmd => cmd.Edit().Text(" ").HtmlAttributes(new { title = "Alterar" })).Width(20);
+
+       // cols.Bound(c => c.Id).Width(50).Title("Código");
+
+        cols.Bound(c => c.Nome).Width(200);
+
+        cols.Bound(c => c.Tipo).Width(100);
+        cols.Bound(c => c.Ativo).Width(50);
+
+
+        cols.Command(cmd => cmd.Destroy().Text(" ").HtmlAttributes(new { title = "Excluir" })).Width(20);
+
+
+    })
+)
+
+
+
+

@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Cadastro de Fornecedores";
+}
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+                .Name("telaCadastro")
+                .Title("Cadastro de Fornecedores")
+
+                .Content(@<text>
+
+                        @(Html.Kendo().Grid<Base.GestorWeb.ViewModels.FornecedorViewModel>()
+                            .Name("Colaborador")
+                                    .ToolBar(tb => tb.Create().Text("Novo Fornecedor").HtmlAttributes(new { width = "200px;" }))
+                                    .Pageable(pg => pg
+                                        .Refresh(true)
+                                        .PageSizes(true)
+                                        .ButtonCount(10)
+                                        )
+
+                                    .Sortable()
+                            .Filterable()
+                            .Editable(ed => ed.Mode(GridEditMode.PopUp).TemplateName("TelaFornecedor"))
+                            .Scrollable(scr => scr.Height(370))
+                            .DataSource(dataSource => dataSource.Ajax()
+                                .Model(model => model.Id(c => c.Id))
+                                    .Read("Ler", "Fornecedor")
+                                    .Update("Atualizar", "Fornecedor")
+                                    .Create("Incluir", "Fornecedor")
+                                    .Destroy("Excluir", "Fornecedor"))
+                            .Columns(cols =>
+                            {
+                                cols.Command(cmd => cmd.Edit().Text(" ").HtmlAttributes(new { title = "Alterar" })).Width(20);
+                                cols.Bound(c => c.Nome).Width(200);
+                                //cols.Bound(c => c.Cnpj).Width(150).Title("CNPJ");
+                                //cols.Bound(c => c.Municipio).Width(150).Title("Município");
+                                //cols.Bound(c => c.Estado).Width(100).Title("Estado");
+                                cols.Bound(c => c.Telefone).Width(100).Title("Telefone");
+                                      
+                                        
+                                cols.Bound(c => c.Email).Width(150).Title("Email");
+                                cols.Bound(c => c.Contato).Width(120).Title("Contato");
+                                cols.Bound(c => c.ContaBancaria).Width(180).Title("Conta Bancária");
+
+                                cols.Command(cmd => cmd.Destroy().Text(" ").HtmlAttributes(new { title = "Excluir" })).Width(20);
+
+                                       
+                            }).Sortable()
+                        )
+                       
+
+            </text>)
+
+
+                .Modal(true)
+                .Height(530)
+                .Width(1100)
+                .Render();
+    }
+</div>
+

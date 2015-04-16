@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - GestorWeb</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/kendo/css")
+    @Scripts.Render("~/bundles/kendo")
+    <link href="~/Content/Borgio.css" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/kendo/cultures/kendo.culture.pt-BR.min.js")"></script>
+    <script>
+        kendo.culture("pt-BR"); // Alterar Cultura para Português do Brasil
+    </script>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="~/ReportViewer/js/ReportViewer-8.0.14.225.js"></script>
+    <link href="~/ReportViewer/styles/ReportViewer-8.0.14.225.css" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+   
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

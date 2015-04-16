@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - GestorWeb</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/kendo/css")
+    @Scripts.Render("~/bundles/kendo")
+    <link href="~/Content/Kurtlewin.css" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/kendo/cultures/kendo.culture.pt-BR.min.js")"></script>
+    <script>
+        kendo.culture("pt-BR"); // Alterar Cultura para Português do Brasil
+    </script>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="~/ReportViewer/js/ReportViewer-8.0.14.225.js"></script>
+    <link href="~/ReportViewer/styles/ReportViewer-8.0.14.225.css" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar  navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header">
+
+                <img src="~/Images/logo_med.png" />
+            </div>
+
+            @Html.Partial("_LoginPartial")
+            <div class="nav navbar-nav navbar-right">
+                <nav>
+                    @Html.Partial("_MenuPrincipal")
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content jumbotron corpo">
+        @RenderBody()
+    </div>
+    <div class="container footer-content">
+
+        <footer>
+
+            <div>
+                <p class="float-right"> @ViewBag.Versao </p>
+            </div>
+            <div>
+                <p>
+                    &copy; @DateTime.Now.Year - Todos os direitos Reservados - Vegasoft Tecnologia da Informação (44) 3020-1934
+                </p>
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+<style scoped>
+    .divComportamento {
+        width: 1000px;
+        height: 550px;
+        position: relative;
+        display: block;
+        top: 50%;
+        margin-top: -250px;
+        left: 50%;
+        margin-left: -550px;
+    }
+
+    .k-button-icontext {
+        display: inline-block;
+        margin: 1px 2px 1px 2px;
+        padding: 1px 1px 1px 3px;
+        font-family: inherit;
+        line-height: 0.4em;
+        text-align: left;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .k-toolbar {
+        position: relative;
+        display: block;
+        vertical-align: middle;
+        line-height: 0.5em;
+    }
+
+    #reportViewer1 {
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        overflow: hidden;
+        font-family: 'segoe ui', 'ms sans serif';
+        overflow: hidden;
+    }
+
+
+    #reportViewer1 .k-menu .k-item {
+        min-width: 60px;
+    }
+
+</style>

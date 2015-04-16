@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="dsBorgio" Width="15.9000001850393cm" Name="ListagemTabelaAuxiliar" Zoom="1.5" ShowSnapGrid="True" SnapToSnapLines="False" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2012/3.5">
+  <DataSources>
+    <SqlDataSource ConnectionString="BorgioDb" SelectCommand="Select * from pessoas" Name="dsBorgio" />
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="1.29999994953474cm" Name="pageHeader">
+      <Items>
+        <TextBox Width="15.8999997477696cm" Height="1.29999994953474cm" Left="0.00000013877947741cm" Top="0cm" Value="Listagem de..." Name="titleTextBox" StyleName="Title">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="12pt" />
+          </Style>
+        </TextBox>
+        <PictureBox Value="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" Width="3.3999992934863cm" Height="0.999999899069472cm" Left="0.199999899069471cm" Top="0.200000037848948cm" Sizing="ScaleProportional" MimeType="image/png" Name="logotipo">
+          <Style BackgroundColor="White" />
+        </PictureBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="0.712499892761313cm" Name="pageFooter">
+      <Style Visible="False">
+        <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+        <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+        <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+      </Style>
+      <Items>
+        <TextBox Width="3.88739582712576cm" Height="0.632708253745407cm" Left="0cm" Top="0.0797916390159072cm" Value="=NOW()" Name="currentTimeTextBox" StyleName="PageInfo">
+          <Style TextAlign="Center">
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.59990096827458cm" Height="0.632708253745407cm" Left="13.0999986374379cm" Top="0cm" Value="=PageNumber" Name="pageInfoTextBox" StyleName="PageInfo">
+          <Style TextAlign="Right">
+            <Font Size="8pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <DetailSection Height="0.600000857909501cm" Name="detail">
+      <Style>
+        <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+        <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+        <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+      </Style>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="18pt" Bold="True" Italic="False" Underline="False" Strikeout="False" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Title" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black" VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Caption" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Data" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="8pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="PageInfo" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4">
+      <Margins>
+        <MarginsU Left="25.4mm" Right="25.4mm" Top="25.4mm" Bottom="25.4mm" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <Groups>
+    <Group Name="labelsGroup">
+      <GroupHeader>
+        <GroupHeaderSection PrintOnEveryPage="True" Height="0.600000302791592cm" Name="labelsGroupHeaderSection">
+          <Style Visible="False" />
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.714374980129302cm" Name="labelsGroupFooterSection">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+    <Group GroupKeepTogether="All" Name="tipoGroup">
+      <GroupHeader>
+        <GroupHeaderSection Height="1.30000015139579cm" Name="tipoGroupHeaderSection">
+          <Style>
+            <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" Right="Solid" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.599998687903128cm" Name="tipoGroupFooterSection">
+          <Style>
+            <BorderStyle Top="None" Bottom="None" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+          </Style>
+        </GroupFooterSection>
+      </GroupFooter>
+    </Group>
+  </Groups>
+</Report>

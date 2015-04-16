@@ -1,0 +1,122 @@
+﻿@model Base.GestorWeb.ViewModels.TitularViewModel
+
+@Html.HiddenFor(model => model.PessoaId)
+
+<div id="campos" style="width:700px;height:150px;padding:5px; ">
+
+    <div class="row">
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+
+        <div class="col-md-7">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+
+        </div>
+    </div>
+
+    @*<div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.TelResidencial)
+
+        </div>
+
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.TelResidencial)
+            @Html.ValidationMessageFor(model => model.TelResidencial)
+
+        </div>
+
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.TelCelular)
+
+        </div>
+
+        <div class="col-md-2">
+            @Html.EditorFor(model => model.TelCelular)
+            @Html.ValidationMessageFor(model => model.TelCelular)
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Email)
+
+        </div>
+
+        <div class="col-md-5">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Tipo)
+
+        </div>
+
+
+
+        <div class="col-md-8">
+            @(Html.Kendo().ComboBox()
+                .Name("Tipo")
+                .Placeholder("Tipo...")
+                .BindTo(new List<string>() {
+                    "Prospecto",
+                    "Cliente",
+                    "Titular",
+                    "Fornecedor",
+                    "Dependente"
+
+                })
+                .SelectedIndex(1)
+                .Suggest(true)
+                .HtmlAttributes(new { style = "width:200px" }))
+            @Html.ValidationMessageFor(model => model.Tipo)
+        </div>
+
+
+    </div>*@
+
+
+</div>
+
+
+
+<style scoped>
+    .k-edit-form {
+        width: 750px;
+    }
+
+    .k-edit-form-container {
+        width: 750px;
+        /*height: 300px;*/
+    }
+
+    div.row {
+        width: 650px;
+        margin-top: 5px;
+    }
+
+    .label {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    .single-line {
+        max-width: none;
+        width: 100%;
+    }
+
+    .k-editor-textarea {
+        max-width: none;
+        width: 100%;
+    }
+</style>
+

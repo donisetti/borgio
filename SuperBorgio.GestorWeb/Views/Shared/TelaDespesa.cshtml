@@ -1,0 +1,8 @@
+﻿
+@using SuperBorgio.Dominio.Entidades
+@model IEnumerable<SuperBorgio.Dominio.Entidades.Despesa>
+
+@foreach (Despesa despesa in Model)
+    {
+        @Html.DisplayForModel(despesa.Descricao)
+    }

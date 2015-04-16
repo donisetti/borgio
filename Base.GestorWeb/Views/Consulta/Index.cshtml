@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title ="Cadastro de " + ViewBag.Tipo;
+}
+
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Consulta")
+
+        .Content(@<text>
+                
+                    @if (ViewBag.Tipo == "Empresas")
+                    {
+                        @Html.Partial("_GridEmpresas")
+                    }
+                            
+                    @if (ViewBag.Tipo == "Pessoas")
+                    {
+                        @Html.Partial("_GridPessoas")
+                    }
+            
+                    @if (ViewBag.Tipo == "Operadoras")
+                    {
+                        @Html.Partial("_GridOperadoras")
+                    }
+         
+                    @if (ViewBag.Tipo == "Titulares")
+                    {
+                        @Html.Partial("_GridTitulares")
+                    }
+                    @if (ViewBag.Tipo == "Dependentes")
+                    {
+                        @Html.Partial("_GridDependentes")
+                    }
+    
+    
+                  </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>
+
+
+
+
+

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Cadastro de Cargos";
+}
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Cadastro de Cargos")
+
+        .Content(@<text>
+            @Html.Partial("_GridCargos")
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>
+
+
+
+
+

@@ -1,0 +1,22 @@
+﻿
+@model SuperBorgio.GestorWeb.ViewModels.JanelaViewModel
+
+<div class="divComportamento">
+    @{
+        Html.Kendo().Window()
+
+            .Name("Listagem")
+            .Title(@Model.Titulo)
+
+            .Content(@<text>
+                         @Html.Partial("_ListaTabAuxiliar")
+                    </text>)
+
+
+            .Modal(true)
+            .Height(530)
+            .Width(1100)
+            .Render();
+    }
+</div>
+

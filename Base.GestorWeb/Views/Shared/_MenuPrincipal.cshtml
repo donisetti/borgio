@@ -1,0 +1,104 @@
+﻿@using Microsoft.Win32
+@(Html.Kendo().Menu()
+            .Name("menu_principal")
+            .Items(menu =>
+            {
+
+
+                menu.Add().Text("Cadastro").Items(cad =>
+                {
+                    cad.Add().Text("Dados Pessoais").Items(pessoa =>
+                    {
+                        pessoa.Add().Text("Pessoas").Action("Index", "Pessoa");
+                        pessoa.Add().Text("Empresas").Action("Index", "Empresa");
+                        pessoa.Add().Text("Titulares").Action("Index", "Titular");
+                        pessoa.Add().Text("Dependentes").Action("Index", "Dependente");
+
+                     
+                    });
+
+                    cad.Add().Text("Dados Básicos").Items(basico =>
+                    {
+                       
+                        basico.Add().Text("Colaboradores").Action("Index", "Colaborador");
+                        basico.Add().Text("Operadoras").Action("Index", "Operadora");
+                        basico.Add().Text("Plano de Saúde").Action("Index", "PlanoSaude");
+                    });
+
+                    cad.Add().Text("Dados Auxiliares").Items(auxiliar =>
+                    {
+                        auxiliar.Add().Text("Ramo de Atividades").Action("RamoAtividades", "TabelaAuxiliar");
+                        auxiliar.Add().Text("Nacionalidades").Action("Nacionalidades", "TabelaAuxiliar");
+                        auxiliar.Add().Text("Cargos").Action("Cargos", "TabelaAuxiliar");
+                        auxiliar.Add().Text("Acomodações").Action("Acomodacoes", "TabelaAuxiliar");
+                        auxiliar.Add().Text("Tipo de Plano").Action("TipoPlanoSaude", "TabelaAuxiliar");
+                        auxiliar.Add().Text("Tipo de Associação").Action("Associacoes", "TabelaAuxiliar");
+                    });
+
+
+
+                });
+
+                menu.Add().Text("Operacional").Items(op =>
+                {
+                    op.Add().Text("Prospecção").Items(cli =>
+                    {
+                        cli.Add().Text("Registro de Visitas").Action("index", "Visita");
+                        cli.Add().Text("Registro de Ligações").Action("index", "Ligacao");
+                        cli.Add().Text("Registro de Ocorrências").Action("index", "Ocorrencia");
+                        cli.Add().Text("Registro de Propostas").Action("index", "Proposta");
+
+                    });
+
+                    op.Add().Text("Contratos").Items(contrato =>
+                    {
+
+                        contrato.Add().Text("Registro de Beneficiários").Action("Beneficiario", "Contrato");
+                        contrato.Add().Text("Registro de Dependentes").Action("Dependente", "Contrato"); ;
+                        contrato.Add().Text("Registro de Ocorrências").Action("Ocorrencia", "Contrato"); ;
+
+                    });
+
+                    //op.Add().Text("Contratos").Action("Operacao", "Home");
+                });
+
+                menu.Add().Text("Financeiro").Items(fin =>
+                {
+                    fin.Add().Text("Registro de Mensalidades").Action("Mensalidade", "Financeiro");
+                    fin.Add().Text("Baixa de Recebimentos").Action("Baixa", "Financeiro");
+                    fin.Add().Text("Pagamento de Comissões").Action("Comissoes", "Financeiro");
+
+                });
+
+
+
+
+                menu.Add().Text("Relatórios").Items(rela =>
+                {
+                    rela.Add().Text("Listagem Geral").Items(lista =>
+                    {
+                        lista.Add().Text("Listagem de Dados Auxiliares").Action("ListaTabAuxiliar", "ListagemGeral");
+                        lista.Add().Text("Listagem de Clientes").Action("Clientes", "ListagemGeral");
+                        lista.Add().Text("Listagem de Operadoras").Action("Operadoras", "ListagemGeral");
+                        lista.Add().Text("Listagem de Colaboradores").Action("Colaboradores", "ListagemGeral");
+                        lista.Add().Text("Listagem de Propostas").Action("Propostas", "ListagemGeral");
+
+                    });
+
+                    rela.Add().Text("Gerenciais").Items(ger =>
+                    {
+                        ger.Add().Text("Listagem de Clientes").Action("Clientes", "ListagemGerencial");
+                        ger.Add().Text("Listagem de Operadoras").Action("Operadoras", "ListagemGerencial");
+                        ger.Add().Text("Listagem de Colaboradores").Action("Colaboradores", "ListagemGerencial");
+                        ger.Add().Text("Registro de Propostas").Action("Propostas", "ListagemGerencial");
+
+                    });
+                });
+
+                //menu.Add().Text("Utilitários").Items(arq =>
+                //{
+                //    arq.Add().Text("Configurações");
+                //    arq.Add().Text("Trocar de usuário").Action("Login", "ControleAcesso");
+                //    arq.Add().Text("Sair").Action("Sair", "Home"); ;
+                //});
+            }))

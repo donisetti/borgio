@@ -1,0 +1,195 @@
+﻿@model Base.GestorWeb.ViewModels.FornecedorViewModel
+@Html.HiddenFor(model => model.Id)
+<div id="campos" style="width:700px;height:450px;padding:5px; ">
+    <div id="telatab">
+        @(Html.Kendo().TabStrip()
+              .Name("tabstrip")
+              .Items(tabstrip =>
+              {
+                  tabstrip.Add().Text(" Dados Fornecedor ")
+                      .Selected(true)
+                      .Content(@<text>
+
+                        <div class="row">
+                            <div class="col-md-1">
+
+                                @Html.LabelFor(model => model.Nome)
+
+                            </div>
+                            <div class="col-md-10">
+
+                                @Html.EditorFor(model => model.Nome)
+                                @Html.ValidationMessageFor(model => model.Nome)
+
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Endereco)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.Endereco)
+                                @Html.ValidationMessageFor(model => model.Endereco)
+                            </div>
+
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Bairro)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.Bairro)
+                                @Html.ValidationMessageFor(model => model.Bairro)
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Cep)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.EditorFor(model => model.Cep)
+                                @Html.ValidationMessageFor(model => model.Cep)
+
+                            </div>
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Municipio)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.EditorFor(model => model.Municipio)
+                                @Html.ValidationMessageFor(model => model.Municipio)
+                            </div>
+
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Estado)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.EditorFor(model => model.Estado)
+                                @Html.ValidationMessageFor(model => model.Estado)
+                            </div>
+
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Telefone)
+                            </div>
+                            <div class="col-md-3">
+                                @Html.EditorFor(model => model.Telefone)
+                                @Html.ValidationMessageFor(model => model.Telefone)
+                            </div>
+                            
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.TelCelular)
+                            </div>
+                            <div class="col-md-3">
+                                @Html.EditorFor(model => model.TelCelular)
+                                @Html.ValidationMessageFor(model => model.TelCelular)
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Email)
+                            </div>
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Email)
+                                @Html.ValidationMessageFor(model => model.Email)
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Contato)
+                            </div>
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Contato)
+                                @Html.ValidationMessageFor(model => model.Contato)
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.InscricaoMunicipal)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.EditorFor(model => model.InscricaoMunicipal)
+                                @Html.ValidationMessageFor(model => model.InscricaoMunicipal)
+                            </div>
+
+
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.Cnpj)
+                            </div>
+                            <div class="col-md-3">
+                                @Html.EditorFor(model => model.Cnpj)
+                                @Html.ValidationMessageFor(model => model.Cnpj)
+                            </div>
+
+
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.InscricaoEstadual)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.EditorFor(model => model.InscricaoEstadual)
+                                @Html.ValidationMessageFor(model => model.InscricaoEstadual)
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.PracaPagto)
+                            </div>
+                            <div class="col-md-2">
+                                @Html.EditorFor(model => model.PracaPagto)
+                                @Html.ValidationMessageFor(model => model.PracaPagto)
+                            </div>
+                            <div class="col-md-1">
+                                @Html.LabelFor(model => model.ContaBancaria)
+                            </div>
+                            <div class="col-md-4">
+                                @Html.EditorFor(model => model.ContaBancaria)
+                                @Html.ValidationMessageFor(model => model.ContaBancaria)
+                            </div>
+
+
+                        </div>
+                    </text>);
+              })
+        )
+    </div>
+</div>
+
+
+
+
+<style scoped>
+    .k-edit-form {
+        width: 750px;
+    }
+
+    .k-edit-form-container {
+        width: 750px;
+        /*height: 300px;*/
+    }
+
+    div.row {
+        margin-top: 5px;
+    }
+
+    .label {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    .single-line {
+        max-width: none;
+        width: 100%;
+    }
+</style>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Cadastro de Acomodações";
+}
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Cadastro de Acomodações")
+
+        .Content(@<text>
+            @Html.Partial("_GridAcomodacoes")
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>
+
+
+
+
+

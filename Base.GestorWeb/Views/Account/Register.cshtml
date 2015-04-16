@@ -1,0 +1,76 @@
+﻿@model Base.GestorWeb.Models.RegisterViewModel
+@{
+    ViewBag.Title = "usuário";
+}
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaCadastro")
+        .Title("Nova conta")
+
+        .Content(@<text>
+
+        <div>
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                
+                <hr />
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-6">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-6">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-6">
+                        <input type="submit" class="btn btn-default" value="Confirmar" />
+                    </div>
+                </div>
+            }
+        </div>              
+
+    </text>)
+
+
+        .Modal(true)
+        .Height(430)
+        .Width(600)
+        .Render();
+    }
+</div>
+
+<style scoped>
+    .divComportamento {
+        width: 450px;
+            height: 330px;
+        position: relative;
+        display: block;
+        top: 50%;
+        margin-top: -250px;
+        left: 50%;
+        margin-left: -450px;
+    }
+</style>
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

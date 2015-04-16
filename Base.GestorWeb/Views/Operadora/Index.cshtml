@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Cadastro de Operadora";
+}
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Cadastro de Operadora")
+
+        .Content(@<text>
+            @Html.Partial("_GridOperadora")
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>

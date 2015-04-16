@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Listagem de Clientes";
+}
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Listagem de Clientes")
+
+        .Content(@<text>
+             @Html.Partial("_ListaClientes")
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>

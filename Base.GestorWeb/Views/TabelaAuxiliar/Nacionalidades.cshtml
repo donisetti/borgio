@@ -1,0 +1,47 @@
+﻿@model Base.GestorWeb.ViewModels.JanelaViewModel
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title(@Model.Titulo)
+
+        .Content(@<text>
+            @Html.Partial(@Model.Tela)
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>
+
+@*@{
+    ViewBag.Title = "Cadastro de Nacionalidades";
+}
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+        .Name("telaConsulta")
+        .Title("Cadastro de Nacionalidades")
+
+        .Content(@<text>
+            @Html.Partial("_GridNacionalidades")
+        </text>)
+
+
+        .Modal(true)
+        .Height(530)
+        .Width(1100)
+        .Render();
+    }
+</div>*@
+
+
+
+
+

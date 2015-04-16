@@ -1,0 +1,71 @@
+﻿@using Telerik.Reporting
+@using Telerik.ReportViewer.Mvc
+@{
+    ViewBag.Title = "Listagem de Clientes";
+}
+
+
+<link href="~/ReportViewer/styles/ReportViewer-8.0.14.225.css" rel="stylesheet" />
+
+
+
+<div class="divComportamento">
+    @{Html.Kendo().Window()
+
+            .Name("FichaFuncionario")
+            .Title("Cadastro de Funcionários")
+
+            .Content(@<text>
+
+                @(Html.TelerikReporting().ReportViewer()
+                                    .Id("reportViewer1")
+                                    .ServiceUrl("/api/reports/")
+                                    .TemplateUrl("/ReportViewer/templates/telerikReportViewer.html")
+
+                                            .ReportSource(new UriReportSource() { Uri = "ListagemTabelaAuxiliar.trdx" })
+                                    .ViewMode(ViewModes.PRINT_PREVIEW)
+                                            .ScaleMode(ScaleModes.FIT_PAGE_WIDTH)
+
+                                    .Scale(1.0)
+                )
+
+
+            </text>)
+
+
+            .Modal(true)
+            .Height(630)
+            .Width(1100)
+            .Render();
+    }
+</div>
+
+
+<style scoped>
+    .divComportamento {
+        width: 1000px;
+        height: 550px;
+        position: relative;
+        display: block;
+        top: 50%;
+        margin-top: -250px;
+        left: 50%;
+        margin-left: -550px;
+    }
+
+    #reportViewer1 {
+        position: absolute;
+        left: 5px;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        overflow: hidden;
+        font-family: 'segoe ui', 'ms sans serif';
+        overflow: hidden;
+    }
+
+
+        #reportViewer1 .k-menu .k-item {
+            min-width: 60px;
+        }
+</style>

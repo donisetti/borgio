@@ -1,0 +1,50 @@
+﻿@using Base.GestorWeb.ViewModels
+@(Html.Kendo().Grid<OcorrenciaViewModel>()
+    .Name("GridEmpresa")
+    .ToolBar(tb => tb.Create())
+    .Pageable(pg => pg
+        .Refresh(true)
+        .PageSizes(true)
+        .ButtonCount(20)
+        )
+    .Sortable()
+    .Filterable()
+
+    .Editable(ed =>
+                    {
+                        ed.Mode(GridEditMode.PopUp).TemplateName("TelaOcorrencia");
+                        ed.DisplayDeleteConfirmation("Confirma a exlusão deste item?");
+                        ed.Window(w => w.Title("Cadastro de Beneficiário"));
+
+                    }
+          )
+    .Scrollable(scr => scr.Height(360))
+    .DataSource(dataSource => dataSource.Ajax()
+    .Model(model => model.Id(c => c.PessoaId))
+            .Read("Ler", "Ocorrencia")
+                .Create("Incluir", "Ocorrencia")
+                .Update("Atualizar", "Ocorrencia")
+                .Destroy("Excluir", "Ocorrencia"))
+
+    .Columns(cols =>
+    {
+        cols.Command(cmd => cmd.Edit().Text(" ").HtmlAttributes(new { title = "Alterar" })).Width(20);
+
+        // cols.Bound(c => c.PessoaId).Width(50).Title("Código");
+
+        //cols.Bound(c => c.Nome).Width(150);
+        //cols.Bound(c => c.Email).Width(100);
+        //cols.Bound(c => c.Apolice).Width(100);
+
+
+        cols.Command(cmd => cmd.Destroy().Text(" ").HtmlAttributes(new { title = "Excluir" })).Width(20);
+
+
+    })
+)
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+﻿
+@using Base.GestorWeb.ViewModels
+@(Html.Kendo().Grid<ColaboradorViewModel>()
+    .Name("GridPessoa")
+    .ToolBar(tb => tb.Create())
+    .Pageable(pg => pg
+        .Refresh(true)
+        .PageSizes(true)
+        .ButtonCount(20)
+        )
+    .Sortable()
+    .Filterable()
+
+   
+    .Editable(ed =>
+            {
+                ed.Mode(GridEditMode.PopUp).TemplateName("TelaColaborador");
+                ed.DisplayDeleteConfirmation("Confirma a exlusão deste item?");
+                ed.Window(w => w.Title("Cadastro de Colaboradores"));
+
+            }
+          )
+    .Scrollable(scr => scr.Height(360))
+    .DataSource(dataSource => dataSource.Ajax()
+    .Model(model => model.Id(c => c.PessoaId))
+        .Read("Ler", "Colaborador")
+            .Create("Incluir", "Colaborador")
+            .Update("Atualizar", "Colaborador")
+            .Destroy("Excluir", "Colaborador"))
+
+    .Columns(cols =>
+    {
+        cols.Command(cmd => cmd.Edit().Text(" ").HtmlAttributes(new { title = "Alterar" })).Width(20);
+
+      //  cols.Bound(c => c.PessoaId).Width(50).Title("Código");
+
+        cols.Bound(c => c.Nome).Width(200);
+        cols.Bound(c => c.Email).Width(100);
+        cols.Bound(c => c.Tipo).Width(100);
+
+
+        cols.Command(cmd => cmd.Destroy().Text(" ").HtmlAttributes(new { title = "Excluir" })).Width(20);
+
+
+    })
+)

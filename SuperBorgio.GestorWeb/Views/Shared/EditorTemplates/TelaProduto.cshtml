@@ -1,0 +1,223 @@
+﻿@model SuperBorgio.GestorWeb.ViewModels.ProdutoViewModel
+
+@Html.HiddenFor(model => model.Id)
+
+<div id="campos" style="width:900px;height:200px;padding:5px; ">
+
+    <div class="row">
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Codigo)
+        </div>
+
+        <div class="col-sm-2">
+            @Html.EditorFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo)
+
+        </div>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+
+        </div>
+    </div>
+    
+    
+    <div class="row">
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Custo1)
+        </div>
+
+        <div class="col-sm-3">
+            
+            @(Html.Kendo().NumericTextBox<decimal>().Name("Custo1").Format("c").Min(0).Max(100000).Value(0))
+            
+            @Html.ValidationMessageFor(model => model.Custo1)
+
+        </div>
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Fornecedor1)
+        </div>
+
+        <div class="col-sm-2">
+            @Html.EditorFor(model => model.Fornecedor1)
+            @Html.ValidationMessageFor(model => model.Fornecedor1)
+
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Custo2)
+        </div>
+
+        <div class="col-sm-3">
+            @(Html.Kendo().NumericTextBox<decimal>().Name("Custo2").Format("c").Min(0).Max(100000).Value(0))
+
+            @Html.ValidationMessageFor(model => model.Custo2)
+
+        </div>
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Fornecedor2)
+        </div>
+
+        <div class="col-sm-2">
+            @Html.EditorFor(model => model.Fornecedor2)
+            @Html.ValidationMessageFor(model => model.Fornecedor2)
+
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Custo3)
+        </div>
+
+        <div class="col-sm-3">
+            @(Html.Kendo().NumericTextBox<decimal>().Name("Custo3").Format("c").Min(0).Max(100000).Value(0))
+            @Html.ValidationMessageFor(model => model.Custo3)
+
+        </div>
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Fornecedor3)
+        </div>
+
+        <div class="col-sm-2">
+            @Html.EditorFor(model => model.Fornecedor3)
+            @Html.ValidationMessageFor(model => model.Fornecedor3)
+
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Custo4)
+        </div>
+
+        <div class="col-sm-3">
+            @(Html.Kendo().NumericTextBox<decimal>().Name("Custo4").Format("c").Min(0).Max(100000).Value(0))
+            @Html.ValidationMessageFor(model => model.Custo4)
+
+        </div>
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Fornecedor4)
+        </div>
+
+        <div class="col-sm-2">
+            @Html.EditorFor(model => model.Fornecedor4)
+            @Html.ValidationMessageFor(model => model.Fornecedor4)
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Custo5)
+        </div>
+
+        <div class="col-sm-3">
+            @(Html.Kendo().NumericTextBox<decimal>().Name("Custo5").Format("c").Min(0).Max(100000).Value(0))
+            @Html.ValidationMessageFor(model => model.Custo5)
+
+        </div>
+
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Fornecedor5)
+        </div>
+
+        <div class="col-sm-2">
+            @Html.EditorFor(model => model.Fornecedor5)
+            @Html.ValidationMessageFor(model => model.Fornecedor5)
+
+        </div>
+    </div>
+
+
+
+    @*<div class="row">
+        <div class="col-sm-2">
+            @Html.LabelFor(model => model.Tipo)
+
+        </div>
+
+
+
+        <div class="col-sm-8">
+            @(Html.Kendo().ComboBox()
+                .Name("Tipo")
+                .Enable(false)
+                .Placeholder("Tipo...")
+                .BindTo(new List<string>() {
+                  "Ramo de Atividades",
+                  "Nacionalidades",
+                  "Cargos",
+                 "Acomodações" ,
+                 "Tipo de Plano de Saúde",
+                    "Tipo de Associação"
+
+                })
+                .SelectedIndex(1)
+                .Suggest(true)
+                .HtmlAttributes(new { style = "width:200px" }))
+            @Html.ValidationMessageFor(model => model.Tipo)
+        </div>
+
+
+    </div>*@
+
+
+</div>
+
+
+<style scoped>
+    .k-edit-form {
+        width: 750px;
+    }
+
+    .k-edit-form-container {
+        width: 750px;
+        /*height: 300px;*/
+    }
+
+    div.row {
+        width: 750px;
+        margin-top: 5px;
+    }
+
+    .label {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+
+    .single-line {
+        max-width: none;
+        width: 100%;
+    }
+
+    .k-editor-textarea {
+        max-width: none;
+        width: 100%;
+    }
+</style>
+
+

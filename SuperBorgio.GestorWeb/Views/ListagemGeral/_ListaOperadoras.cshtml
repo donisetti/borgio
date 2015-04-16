@@ -1,0 +1,12 @@
+﻿@(Html.TelerikReporting().ReportViewer()
+        .Id("reportViewer1")
+        .ServiceUrl("/api/reports/")
+        .TemplateUrl("/ReportViewer/templates/telerikReportViewer.html")
+        .ReportSource(new UriReportSource() { Uri = "ListagemOperadoras.trdx" })
+        .ViewMode(ViewModes.PRINT_PREVIEW)
+        .ScaleMode(ScaleModes.FIT_PAGE_WIDTH)
+        .Scale(1.0)
+)
+
+
+

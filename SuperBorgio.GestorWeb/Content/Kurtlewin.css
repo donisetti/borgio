@@ -1,0 +1,129 @@
+﻿
+nav  {
+    display: block;
+    font-size: 12px; /*Tamanho da fonte do menu*/
+    padding-top: 5px; /*deslocamento da barra de menu*/
+    margin-right: 15px; /*Margem direita da barra de menu*/
+   
+
+}
+
+footer {
+    clear: both;
+    background-color: #e2e2e2; /*Cor da barra do rodapé*/
+    font-size: .8em; /*Tamanho da fonte do rodapé*/
+    height: 20px; /*Altura do rodapé*/
+}
+
+.container 
+{
+    margin-top: 5px; /*Margem do Menu*/
+}
+.body-content {
+    margin-top: 1px; /*Margem do Body Principal*/
+    
+}
+.footer-content {   
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 1px;   
+}
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+ /*.DivAlinhamentoTelaCadastro
+ {
+     width: auto;
+     height: 450px;
+
+     top: -13%;
+     left: -1%;
+     position: relative;
+     display: block
+ }*/
+
+ .DivAlinhamentoTelaCadastro
+ {  
+     width: auto;
+     height: auto;
+
+     /*top: -13%;*/
+     top:50%;
+     margin-top:-285px;
+     position: relative;
+     display: block;
+     
+      left:50%;
+     margin-left:-450px;
+
+ }
+ .DivAlinhamentoTelaCadastro h1 {
+      line-height:1;color:inherit
+  }
+  .DivAlinhamentoTelaCadastro p {
+      line-height:1.4
+  }
+  .container 
+  .DivAlinhamentoTelaCadastro {
+      border-radius:6px
+  }
+
+
+  .DivAlinhamentoOperacional
+ {  
+     width: auto;
+     height: auto;
+
+     /*top: -13%;*/
+     top:50%;
+     margin-top:-285px;
+     position: relative;
+     display: block;
+     
+      left:50%;
+     margin-left:-450px;
+
+ }
+  .DivAlinhamentoOperacional h1 {
+      line-height:1;color:inherit
+  }
+  .DivAlinhamentoOperacional p {
+      line-height:1.4
+  }
+  .container 
+  .DivAlinhamentoOperacional {
+      border-radius:6px
+  }
+
+
+  .DivAlinhamentoRelatorios
+ {  
+     width: auto;
+     height: auto;
+
+     /*top: -13%;*/
+     top:50%;
+     margin-top:-285px;
+     position: relative;
+     display: block;
+     
+      left:50%;
+     margin-left:-450px;
+
+ }
+  .DivAlinhamentoRelatorios h1 {
+      line-height:1;color:inherit
+  }
+  .DivAlinhamentoRelatorios p {
+      line-height:1.4
+  }
+  .container 
+  .DivAlinhamentoRelatorios {
+      border-radius:6px
+  }
+
