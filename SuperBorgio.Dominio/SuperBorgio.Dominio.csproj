@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -63,6 +64,10 @@
     <Compile Include="Migrations\201504151636551_AjusteFornecedor.Designer.cs">
       <DependentUpon>201504151636551_AjusteFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504171429104_atletas.cs" />
+    <Compile Include="Migrations\201504171429104_atletas.Designer.cs">
+      <DependentUpon>201504171429104_atletas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\IRepositorio.cs" />
@@ -87,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504151636551_AjusteFornecedor.resx">
       <DependentUpon>201504151636551_AjusteFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504171429104_atletas.resx">
+      <DependentUpon>201504171429104_atletas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
